@@ -1,0 +1,177 @@
+​<style> 
+              
+            .container-img {
+                position: relative;}
+            .logotipo{      
+               height: 50px;
+               width: auto; 
+            }  
+            .branco{                
+               color: white;
+               font-weight: bold;
+            }
+            .topleft {
+              position: absolute;
+              top: 8px;
+              left: 16px;
+              font-size: 18px;
+            }
+            .center {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              font-size: 18px;
+            }
+            .topright {
+              position: absolute;
+              top: 8px;
+              right: 16px;
+              font-size: 18px;
+            }
+            img { 
+              width: 100%;
+              height: auto;
+                /*opacity: 0.3;*/}   
+            .button {
+              border: none;
+              color: #4CAF50;
+              padding: 10px 22px;
+              text-align: center;
+              text-decoration: none;
+              display: inline-block;
+              font-size: 16px;
+              margin: 4px 2px;
+              transition-duration: 0.4s;
+              cursor: pointer;
+
+            }
+            .button1 {
+              background-color: #4CAF50; 
+              color: black; 
+              border: 2px solid #4CAF50;
+
+            }
+            .button1:hover {
+              background-color: #4CAF50;
+              color: white;
+            }
+            .button2 {
+              background-color: white; 
+              color: black; 
+              border: 2px solid #008CBA;
+            }
+            .button2:hover {
+              background-color: #008CBA;
+              color: white;
+            }
+            
+            #myFooter {
+                background-color: #3c3d41;
+                color: white;
+                padding-top: 30px;
+            }
+            #myFooter .footer-copyright {
+                background-color: #333333;
+                padding-top: 3px;
+                padding-bottom: 3px;
+                text-align: center;
+            }
+            #myFooter .row {
+                margin-bottom: 60px;
+            }
+            #myFooter .navbar-brand {
+                margin-top: 45px;
+                height: 65px;
+            }
+            #myFooter .footer-copyright p {
+                margin: 10px;
+                color: #ccc;
+            }
+            #myFooter ul {
+                list-style-type: none;
+                padding-left: 0;
+                line-height: 1.7;
+            }
+            #myFooter h5 {
+                font-size: 18px;
+                color: white;
+                font-weight: bold;
+                margin-top: 30px;
+            }
+            #myFooter h2 a{
+                font-size: 50px;
+                text-align: center;
+                color: #fff;
+            }
+            #myFooter a {
+                color: #d2d1d1;
+                text-decoration: none;
+            }
+            #myFooter a:hover,
+            #myFooter a:focus {
+                text-decoration: none;
+                color: white;
+            }
+            #myFooter .social-networks {
+            
+                text-align: center;
+                padding-top: 30px;
+                padding-bottom: 16px;
+                 padding-right:90px;
+            }
+            #myFooter .social-networks a {
+                
+                color: deepskyblue;
+                padding:50px;
+                transition: 0.2s;
+            }
+            #myFooter .social-networks a:hover {
+                text-decoration: none;
+            }
+            #myFooter .facebook:hover {
+                height: 50px;
+                color: #0077e2;
+            }
+            #myFooter .instagram:hover {
+                color: purple;
+            }
+            #myFooter .twitter:hover {
+                color: #00aced;
+            }
+            #myFooter .btn {
+                color: white;
+                background-color: #d84b6b;
+                border-radius: 20px;
+                border: none;
+                width: 150px;
+                display: block;
+                margin: 0 auto;
+                margin-top: 10px;
+                line-height: 25px;
+            }
+            @media screen and (max-width: 767px) {
+                #myFooter {
+                    text-align: center;
+                }
+
+html{
+    height: 100%;
+}
+body{
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    height: 100%;
+}
+.content{
+   flex: 1 0 auto;
+   -webkit-flex: 1 0 auto;
+   min-height: 200px;
+}
+#myFooter{
+   flex: 0 0 auto;
+   -webkit-flex: 0 0 auto;
+} 
+    </style>

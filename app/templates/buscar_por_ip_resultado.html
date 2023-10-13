@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% if mensagem %}
+        <p>{{ mensagem }}</p>
+    {% else %}
+        <div class="card">
+            <h2>Dados do IP: {{ ip }}</h2>
+            <p>Nome: {{ nome }}</p>
+            <p>Email: {{ email }}</p>
+            <p>Latitude: {{ latitude }}</p>
+            <p>Longitude: {{ longitude }}</p>
+            <p>Maior tempo de permanência: {{ maior_tempo }}</p>
+            <p>Quantidade de acessos: {{ quantidade_acessos }}</p>
+        </div>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Minha Página</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9OSTW2FqEPFPkWZqBqAa6mKp6Ov4os_Y&callback=initMap"
+        async defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Dados de localização</h1>
+        <p>Seu endereço IP é: <span id="ip"></span></p>
+        <p>Sua localização é: <span id="location"></span></p>
+        <p>Suas coordenadas são: <span id="coordenadas"></span></p>
+        <button class="show-map">Mostrar mapa</button>
+    </div>
+
+    <div style="">
+        <div id="map"></div>
+    </div>
+
+    <script>
+
+        const options = {
+           maximumAge:60000, timeout:5000, enableHighAccuracy:true
+        };
+
+        function success(pos) {
+            const crd = pos.coords;
+            let latitude = `Latitude: ${crd.latitude}`;
+            let longitude = `Longitude: ${crd.longitude}`;
+            let precisao = `Mais ou menos ${crd.accuracy} metros.`;
+            document.getElementById('coordenadas').innerHTML = `<br>${latitude}<br>${longitude}<br>${precisao}`;
+            var la = parseFloat(crd.latitude);
+            var lo = parseFloat(crd.longitude);
+            var position = { lat: la, lng: lo };
+
+            initMap(position);
+        }
+
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+
+        navigator.geolocation.getCurrentPosition(success, error, options);
+
+        function showIP(json) {
+            const ip = json.ip;
+            document.getElementById('ip').innerHTML = ip;
+
+            const url = `https://ipapi.co/${ip}/json/`;
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    const city = data.city;
+                    const region = data.region;
+                    const country = data.country_name;
+                    document.getElementById('location').innerHTML = `Cidade: ${city}, Estado: ${region}, País: ${country}`;
+                })
+                .catch(error => console.error(error));
+        }
+
+        fetch('https://api.ipify.org?format=json')
+            .then(response => response.json())
+            .then(data => showIP(data))
+            .catch(error => console.error(error));
+
+        function initMap(position) {
+            const location = position
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 10,
+                center: location,
+            });
+            const marker = new google.maps.Marker({
+                position: location,
+                map: map,
+            });
+        }
+        window.onload = function () {
+            document.querySelector(".show-map").addEventListener("click", function () {
+                document.querySelector("#map").style = "position:unset"
+            })
+        };
+    </script>
+</body>
+
+</html>

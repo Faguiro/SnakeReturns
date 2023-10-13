@@ -1,0 +1,1 @@
+{"mappings":"AAAAA,EAAEC,UAAUC,OAAM,WACdF,EAAE,KAAKG,OAAM,WACTC,MAAM","sources":["src/index.js"],"sourcesContent":["$(document).ready(function(){\r\n    $(\"p\").click(function(){\r\n        alert(\"deu certo!\")\r\n    })\r\n\r\n})\r\n"],"names":["$","document","ready","click","alert"],"version":3,"file":"index.e8ff2d10.js.map"}

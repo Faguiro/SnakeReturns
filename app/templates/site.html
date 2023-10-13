@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <title></title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+  <style>
+    .intro {
+      vertical-align: top;
+      background-image: url('/static/images/dev.png');
+      background-repeat: no-repeat;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .format {
+      color: white;
+      padding-top: 1%;
+      padding-left: 8%;
+    }
+
+    .cover {
+      position: absolute;
+      max-width: 100%;
+      height: 80%;
+      opacity: 0.5;
+      z-index: -12;
+    }
+
+    .nld-brand-footer {
+    display: none;
+    }
+
+  </style>
+
+</head>
+<!-- Start of HubSpot Embed Code -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/23305686.js"></script>
+<!-- End of HubSpot Embed Code -->
+
+<body style="background-color: rgb(15, 15, 15); margin:0; padding:0">
+
+  <!-- Reprodução simples de áudio -->
+  <audio src="static/audio/bensound-happyrock.ogg" autoplay>
+    O seu navegador não suporta o elemento <code>audio</code>.
+  </audio>
+
+
+
+
+  <nav class="navbar navbar-inverse">
+
+    <div class="navbar-header">
+      <a class="navbar-brand" href=>Snake Project</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="{{ url_for('main.site') }}">Início</a></li>
+      <li><a href="{{ url_for('main.index') }}">Micro Blog</a></li>
+      <li><a href="{{ url_for('main.user', username=current_user.username) }}">Perfil</a></li>
+    </ul>
+
+    <form class="navbar-form navbar-left" action="">
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Procurar" name="search">
+      </div>
+      <button type="submit" class="btn btn-default">Enviar</button>
+    </form>
+
+
+
+    <ul class="nav navbar-nav navbar-right">
+      {% if current_user.is_anonymous %}
+      <li><a href="{{ url_for('auth.register') }}"><span class="glyphicon glyphicon-user"></span> Cadastre se</a></li>
+      <li><a href="/auth/login"><span class="glyphicon glyphicon-log-in"></span> Entre</a></li>
+      {% else %}
+      <li><a href="{{ url_for('auth.logout') }}"><span class="glyphicon glyphicon-remove-sign"></span>Sair </a></li>
+      {% endif %}
+    </ul>
+
+  </nav>
+  <div class="banner" id="banner-tv">
+
+    <style>
+      .banner {
+        min-height: 600px;
+      }
+
+      .alert {
+        padding: 20px;
+        background-color: #f44336;
+        color: white;
+        opacity: 1;
+        transition: opacity 0.6s;
+        margin-bottom: 15px;
+      }
+
+      .alert.success {
+        background-color: #4CAF50;
+      }
+
+      .alert.info {
+        background-color: #2196F3;
+      }
+
+      .alert.warning {
+        background-color: #ff9800;
+      }
+
+      .closebtn {
+        margin-left: 15px;
+        color: white;
+        font-weight: bold;
+        float: right;
+        font-size: 22px;
+        line-height: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .closebtn:hover {
+        color: black;
+      }
+    </style>
+
+
+
+
+    <div class="alert info">
+      <span class="closebtn">&times;</span>
+      <strong>Info!</strong> Postagem nova no site! <a href='/site1'>Clique aqui para ver a postagem anterior.</a>
+    </div>
+
+
+
+    <script>
+      var close = document.getElementsByClassName("closebtn");
+      var i;
+
+      for (i = 0; i < close.length; i++) {
+        close[i].onclick = function () {
+          var div = this.parentElement;
+          div.style.opacity = "0";
+          setTimeout(function () {
+            div.style.display = "none";
+          }, 600);
+        }
+      }
+    </script>
+
+    <img class="cover img-responsive" src="{{url_for('static', filename='images/dev.png')}}" width='100%' height='auto'>
+    <div class='format'>
+      <h1>Snake Project</h1>
+      <h3>Aplicação e projetos em python</h3><br>
+      <h4>O Flask também é um framework web escrito em Python, baseado nas bibliotecas
+        WSGI Werkzeug e Jinja2, e inspirado na estrutura Sinatra Ruby.
+        O principal objetivo do framework é prover um modelo simples para desenvolvimento web,
+        ao mesmo tempo que tem a flexibilidade no uso da linguagem Python.
+      </h4>
+    </div>
+    <style>
+      .format {
+        width: 40%;
+      }
+
+      .format>h4 {
+        line-height: 1.5;
+      }
+    </style>
+  </div>
+
+
+  <div class="jumbotron" style='padding-left:10%; padding-right:8%;  text-align: justify; '>
+    <h1 class="display-4">Flask, o micro-framework</h1>
+    <p class="lead">É chamado de micro-framework por manter um núcleo simples, mas extensível.</p>
+    <hr class="my-4">
+    <p>Não possui camada de abstração de banco de dados, validação de formulários ou mesmo qualquer outro componente, no
+      entanto bibliotecas de terceiros provêm essas funcionalidades.<br>
+      A simplicidade desse framework leva a uma curva de aprendizado mais suave.
+      O Flask foi publicado em Abril de 2010 sob a licença BSD, tendo sido projetado para aplicativos de código aberto
+      sem, no entanto, impedir que você desenvolva seus códigos da maneira que precisar.<br>
+      Além disso, ele tenta seguir as premissas Zen do Python, gerando códigos com alta legibilidade e em boas
+      intenções, “good intentions”.<br>
+      Comparando com o Django, o Flask é mais adequado para projetos pequenos, mesmo tendo sido usados por grandes
+      empresas como Linkedin e Pinterest.</h3>
+    </p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" href="https://flask.palletsprojects.com/en/1.1.x/" role="button">Saiba mais</a>
+    </p>
+  </div>
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+  </script>
+
+
+  <hr>
+  <!-- Footer -->
+  <footer id="myFooter" style=' color: white;'>
+
+    <div class='container-fluid'>
+
+
+      <div class="row">
+        <div class="col-sm-3">
+          <h5>Inicio</h5>
+          <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">Cursos</a></li>
+            <li><a href="">Downloads</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-3">
+          <h5>Sobre nós</h5>
+          <ul>
+            <li><a href="">Informações da Empresa </a></li>
+            <li><a href="">Contato</a></li>
+            <li><a <a href="{{ url_for('main.index') }}">Blog🤌🏽</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-3">
+          <h5>Suporte</h5>
+          <ul>
+            <li><a href="">FAQ</a></li>
+            <li><a href="">Telefones</a></li>
+            <li><a href="">Chat</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-3 info">
+          <h5>Informações</h5>
+          <p>
+            <h6> Se você deseja se tornar um programador de sucesso, cadastre-se no site e curta a página do
+              <a style="color:rgb(10, 179, 246); "
+                href="https://www.facebook.com/python.snakeproject"><b>facebook</b>.</a>
+            </h6>
+          </p>
+        </div>
+      </div>
+    </div>
+    <hr>
+
+    <div class='container' align='bottom'>
+      <div class="row align-items-end">
+
+
+      </div>
+    </div>
+
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-gap: 1px;
+        background-color: rgb(15, 15, 15);
+        padding: 1px;
+      }
+
+      .grid-container>div {
+        background-color: rgba(15, 15, 15, 0.8);
+        text-align: center;
+        padding: 20px 0;
+        font-size: 30px;
+      }
+
+      .grid-container>div>h6 {
+        font-size: 16px;
+        text-align: justify;
+        padding: 0 40px;
+      }
+    </style>
+
+
+    <div class="grid-container">
+      <div><img pading-top='20%' pading-left='20%' src="{{url_for('static', filename='images/logo2.png')}}" width=250 />
+        <h5 style="color:white;padding:20px;">Faguiro2005@gmail.com</h5>
+        <h6>Todos os direitos reservados é uma formalidade de direitos autorais que indica que o
+          detentor dos direitos autorais reserva, ou detém para uso próprio, todos os direitos
+          previstos na lei de direitos autorais. Com origem na Convenção de Buenos Aires de 1910,
+          não está claro se tem algum efeito jurídico em qualquer jurisdição.No entanto,
+          ainda é usado por muitos detentores de direitos autorais.
+          A exigência de adicionar o aviso "todos os direitos reservados" tornou-se essencialmente
+          obsoleta em 23 de agosto de 2000.
+          A frase continua a ser popular e serve como uma convenção útil amplamente usada por artistas,
+          escritores e criadores de conteúdo para evitar ambigüidade e deixar claro o aviso de que seu
+          conteúdo não pode ser copiado livremente.</h6>
+      </div>
+      <div><img align='bottom' src="{{url_for('static', filename='img/giphy.gif')}}" width=250 /></div>
+
+    </div>
+
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://snakeproject.pythonanywhere.com"> Snake Project🐍</a>
+  </div>
+  <!-- Copyright -->
+
+  <script type="text/javascript">(function(n,r,l,d){try{var h=r.head||r.getElementsByTagName("head")[0],s=r.createElement("script");s.defer=true;s.setAttribute("type","text/javascript");s.setAttribute("src",l);n.neuroleadId=d;h.appendChild(s);}catch(e){}})(window,document,"https://cdn.leadster.com.br/neurolead/neurolead.min.js", 66293);</script>
+
+</body>
+
+</html>

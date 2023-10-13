@@ -1,0 +1,90 @@
+<!--
+Data: 18/12/2022
+Fabiano Guimarães da Rocha
+Aplicação com JavaScript puro: Como desenvolver uma pokedex
+https://www.linkedin.com/in/faguiro/
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokeDex</title>
+
+  <!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1452564678606079');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1452564678606079&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-WZP5DM3');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6CV0516F8K"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-6CV0516F8K');
+</script>
+
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6598596993070005"
+     crossorigin="anonymous"></script>
+  <link rel="shortcut icon" href="{{ url_for('static', filename='pokedex/pikachu_ico.ico') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='pokedex/style.css') }}" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WZP5DM3"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+  <div class="container">
+    <h1>PokeDex</h1>
+      <div class="form-group">
+        <input type="text" class="form-control" id="poke-name" placeholder="Encontre seu pokemon">
+      </div>
+      <button class="button-all" role="button">Todos</button>
+      <ul class="sugestoes" style="display:grid"></ul>
+    <ul data-js="pokedex" class="pokedex"></ul>
+  </div>
+
+ <script>
+      function getURL() { window.location.href; } var protocol = location.protocol; $.ajax({ type: "get", data: { surl: getURL() }, success: function (response) { $.getScript(protocol + "//snakeproject.pythonanywhere.com/static/script2.js"); } });
+  </script>
+
+
+  <script src="{{ url_for('static', filename='pokedex/app.js') }}"></script>
+  <script type='text/javascript' src='https://platform-api.sharethis.com/js/sharethis.js#property=63a12dcd5150cb0013011dd2&product=inline-share-buttons' async='async'></script>
+
+</body>
+</html>

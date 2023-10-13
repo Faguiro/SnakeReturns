@@ -1,0 +1,186 @@
+    <!DOCTYPE html>
+    <html lang="pt-br">
+      <head>
+          <link rel="shortcut icon"
+    href="{{ url_for('static', filename='img/favicon.ico') }}">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <!-- Popper JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+         <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+         <link rel="stylesheet" href="assets/css/Footer-with-logo.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='site.css') }}">
+</head>
+
+
+<body>
+<div class="container">
+
+        <nav class="navbar navbar-default">
+         <div class='container'>
+          <a class="navbar-brand" href="{{ url_for('main.user', username=current_user.username) }}">Meu perfil</a>
+          <a class="navbar-brand" href="{{ url_for('main.index') }}">Micro Blog</a>
+          <a class="navbar-brand" href="{{ url_for('auth.login') }}">Entrar</a>
+          <a class="navbar-brand" href="{{ url_for('auth.logout') }}">sair</a>
+         </div>
+        </nav>
+
+
+        </div>
+    <div class=container-fluid'>
+         <div class="container-img">
+            <img  src="{{url_for('static', filename='images/capa.jpg')}}" alt="Imagem responsiva">
+        </div>
+    </div>
+
+
+<br>
+
+
+    <div class ="container">
+        <div class="jumbotron">
+        <h1 class="display-4">Olá, Mundo!🌎</h1>
+        <h3 class="display-6">👉🏾Em Python!🐍</h3>
+        <p class="lead">Este é um simples exemplo de blog criado em Python 3 e Flask.🧑🏽‍🎓</p>
+        <hr class="my-4">
+        <p>👨🏽‍💻Utilizamos tecnonogias como :o Jinja2, SQLAlchemy, WTForms, Flask-Login
+        , Flask-Bootstrap, certifi, elasticsearch  entre muitos outros módulos.</p>
+        <p class="lead">
+        <a class="btn btn-primary btn-lg" <a href="{{ url_for('main.index') }}" role="button">Veja o Blog!</a>
+        <div class="d-flex justify-content-end">
+        </div>
+    </div>
+
+<br>
+
+<div style="background-image:  url "{{ url_for('static', filename='images/globe.jpg') }}"">
+    <div class="jumbotron">
+        <h1 class="display-4">O que é Python?🤔</h1>
+        <p class="lead"></p>
+        <hr class="my-4">
+        <p>A linguagem foi projetada com a filosofia de enfatizar a importância do esforço do programador sobre o esforço computacional. Prioriza a legibilidade do código sobre a velocidade ou expressividade. Combina uma sintaxe concisa e clara com os recursos poderosos de sua biblioteca padrão e por módulos e frameworks desenvolvidos por terceiros. </p>
+        <br><p>Python é uma linguagem de programação de alto nível, interpretada, de script, imperativa, orientada a objetos, funcional,
+        de tipagem dinâmica e forte. Foi lançada por Guido van Rossum em 1991.
+        Atualmente possui um modelo de desenvolvimento comunitário, aberto e gerenciado pela organização
+        sem fins lucrativos Python Software Foundation.</p>
+        <p>O interpretador Python pode ser facilmente estendido com novas funções e tipos de dados implementados em C ou C++ (ou outras linguagens chamadas a partir de C). Python também é adequada como uma linguagem de extensão para aplicações personalizáveis.</p>
+        <p class="lead">
+        <a class="btn btn-primary btn-lg" <a href="https://www.python.org/" role="button">Site Oficial</a>
+        <div class="d-flex justify-content-end">
+        </div>
+     </div>
+</div>
+
+
+
+<div class ="container">
+    <div class="jumbotron">
+        <h1>As principais vantagens do Python🦸‍♂️🦸‍♀️</h1>
+        <p class="lead">1. Simples e fácil de aprender </p>
+        <hr class="my-4">
+        <br><p>O Python é extremamente simples e fácil de aprender, ele se parece muito com a língua inglesa. O que contribui para a sua simplicidade é:
+        <ul>
+            <li>Fonte livre e aberta📚</li>
+            <li>Alto nível🗣</li>
+            <li>Interpretada🤖</li>
+            <li>Grande comunidade🫂</li>
+        </ul>
+        <p>Além disso, no Python, você não precisa lidar com a sintaxe complexa.
+        Se você tem que programar a frase ‘olá mundo’, em Java é preciso escrever
+        acima de três linhas de código enquanto que em Python apenas uma linha é suficiente!</p>
+        <p>Exemplo em Python3:</p>
+        <p><code># Meu primeiro programa em Python<br>print("Ola Mundo!")</code></p><br>
+        <p>Exemplo em Java:</p>
+        <p><code> * Exemplo de Hello World em Java.</br>public HelloWorld {<br>
+            public static void main(String[] args) {<br>System.out.println("Hello world !!!");<br>}<br>}</code></p><br>
+
+        <p>Muito mais simples, não é mesmo?</p>
+        <p class="lead"> </p>
+        <a class="btn btn-primary btn-lg" <a href="https://www.hostgator.com.br/blog/10-motivos-para-voce-aprender-python/" role="button">Leia esta matéria!</a>
+        <div class="d-flex justify-content-end">
+        </div>
+    </div>
+</div></div></div></div></div></div></div>
+
+</body>
+
+
+<!-- Footer -->
+<footer id="myFooter">
+
+<div class='container-fluid'>
+
+
+    <div class="row">
+        <div class="col-sm-3">
+            <h5>Inicio</h5>
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Cursos</a></li>
+                <li><a href="">Downloads</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3">
+            <h5>Sobre nós</h5>
+            <ul>
+                <li><a href="">Informações da Empresa </a></li>
+                <li><a href="">Contato</a></li>
+                <li><a <a href="{{ url_for('main.index') }}">Blog🤌🏽</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3">
+            <h5>Suporte</h5>
+            <ul>
+                <li><a href="">FAQ</a></li>
+                <li><a href="">Telefones</a></li>
+                <li><a href="">Chat</a></li>
+            </ul>
+        </div>
+
+        <div class="col-sm-3 info">
+            <h5>Informações</h5>
+            <p><h6> Se você deseja se tornar um programador de sucesso, cadastre-se no site e curta a pagina do
+            <a style="color:skyblue; " href="https://www.facebook.com/python.snakeproject" ><b>facebook</b>.</a>
+            </h6></p>
+        </div>
+    </div>
+
+<hr>
+
+    <div class='container'   align='bottom'>
+        <div class="row align-items-end">
+            <div  class="col" align='bottom'>
+                <img class="col" align='bottom' src="{{url_for('static', filename='images/logo2.png')}}" >
+                <h5 class='col' align='center' style="color:white;padding:20px;">Faguiro2005@gmail.com</h5>
+            </div>
+            <div class="col">
+                <img class='col 'src="http://i.stack.imgur.com/SBv4T.gif" alt="this slowpoke moves" width=250/>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2020 Copyright:
+    <a href="https://snakeproject.pythonanywhere.com"> Snake Project🐍</a>
+    </div>
+    <!-- Copyright -->
+</html>
